@@ -3,7 +3,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppContext } from '../AppContext';
 import React, { useContext } from 'react';
 
-// Lôi 2 bộ Icon này ra để làm logo Google và Facebook
 import { FontAwesome5, AntDesign } from '@expo/vector-icons';
 
 export default function SignInScreen() {
@@ -11,13 +10,10 @@ export default function SignInScreen() {
     return (
         <SafeAreaView style={styles.container}>
             
-            {/* --- TIÊU ĐỀ --- */}
             <Text style={styles.mainTitle}>Sign In</Text>
 
-            {/* --- KHỐI FORM ĐIỀN THÔNG TIN --- */}
             <View style={styles.formContainer}>
                 
-                {/* Email Input */}
                 <Text style={styles.label}>Email ID</Text>
                 <TextInput 
                     style={styles.input} 
@@ -25,7 +21,6 @@ export default function SignInScreen() {
                     placeholderTextColor="#aaa"
                 />
 
-                {/* Password Input */}
                 <Text style={styles.label}>Password</Text>
                 <TextInput 
                     style={styles.input} 
@@ -34,35 +29,28 @@ export default function SignInScreen() {
                     secureTextEntry={true} // Biến chữ thành dấu chấm đen
                 />
 
-                {/* Nút Quên mật khẩu */}
                 <TouchableOpacity style={styles.forgotBtn}>
                     <Text style={styles.forgotText}>Forgot password?</Text>
                 </TouchableOpacity>
 
-                {/* Nút Đăng nhập chính */}
                 <TouchableOpacity style={styles.signInBtn} onPress={() => setIsLoggedIn(true)}>
                     <Text style={styles.signInBtnText}>Sign In</Text>
                 </TouchableOpacity>
 
-                {/* Chữ "Hoặc đăng nhập bằng" */}
                 <Text style={styles.orText}>Or sign in with</Text>
 
-                {/* Khối Mạng Xã Hội (Nằm ngang) */}
                 <View style={styles.socialContainer}>
-                    {/* Nút Google */}
                     <TouchableOpacity style={[styles.socialBtn, styles.googleBtn]}>
                         <AntDesign name="google" size={20} color="#EA4335" />
                         <Text style={styles.googleText}>Google</Text>
                     </TouchableOpacity>
 
-                    {/* Nút Facebook */}
                     <TouchableOpacity style={[styles.socialBtn, styles.facebookBtn]}>
                         <FontAwesome5 name="facebook-f" size={20} color="#fff" />
                         <Text style={styles.facebookText}>Facebook</Text>
                     </TouchableOpacity>
                 </View>
 
-                {/* Khối Đăng ký dưới đáy */}
                 <View style={styles.footerContainer}>
                     <Text style={styles.footerText}>Not yet a member? </Text>
                     <TouchableOpacity>
@@ -75,11 +63,10 @@ export default function SignInScreen() {
     );
 }
 
-// --- BẢNG ĐIỀU KHIỂN CSS ---
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f8f9fa', // Nền hơi xám sáng
+        backgroundColor: '#f8f9fa', 
     },
     mainTitle: {
         fontSize: 26,
@@ -109,7 +96,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
     },
     forgotBtn: {
-        alignItems: 'flex-end', // Đẩy cái nút này dạt sang lề phải
+        alignItems: 'flex-end',
         marginTop: 10,
         marginBottom: 20,
     },
@@ -137,12 +124,12 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     socialContainer: {
-        flexDirection: 'row', // Chìa khóa để 2 nút nằm cạnh nhau
+        flexDirection: 'row', 
         justifyContent: 'space-between',
     },
     socialBtn: {
-        flex: 1, // Chia đều 50/50 chiều rộng cho 2 nút
-        flexDirection: 'row', // Icon và chữ nằm ngang
+        flex: 1, 
+        flexDirection: 'row', 
         height: 50,
         borderRadius: 8,
         justifyContent: 'center',
@@ -152,7 +139,7 @@ const styles = StyleSheet.create({
     googleBtn: {
         backgroundColor: '#fff',
         borderColor: '#ccc',
-        marginRight: 10, // Cách thằng Facebook 1 khoảng nhỏ
+        marginRight: 10, 
     },
     googleText: {
         color: '#333',
@@ -160,7 +147,7 @@ const styles = StyleSheet.create({
         marginLeft: 10,
     },
     facebookBtn: {
-        backgroundColor: '#4267B2', // Xanh Facebook
+        backgroundColor: '#4267B2', 
         borderColor: '#4267B2',
         marginLeft: 10,
     },
